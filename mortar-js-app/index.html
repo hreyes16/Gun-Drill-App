@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+   
+    <title>Mortar Drills</title>
+   
+</head>
+<body>
+    <div id="app-container">
+
+        <h2>Gun Drills</h2>
+
+        <div class="watch">
+
+        </div>
+
+        <div class="data-output">
+            <label for="">Deflection</label>
+        <input type="text" readonly id="deflection-input" value = 2800>
+        <label for="">Elevation</label>
+        <input type="text" readonly id="elevation-input" value = 800>
+    </div>
+
+ <div class="Generate-Btns">
+    
+        <button id="generate-small-data">Small Deflection</button>
+
+    
+        <button id="generate-large-data">Large Deflection</button>
+    </div>
+
+        
+        <button id="reset-btn">Reset Data</button>
+        <div class="timer-btns">
+            <button id="start-time">Start Time</button>
+            <button id="stop-time">Stop Time</button>
+        </div>
+        <div class="timer">
+            00:00:00
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+    <script src="timer.js"></script>
+</body>
+</html>
