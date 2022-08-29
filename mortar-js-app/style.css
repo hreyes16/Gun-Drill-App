@@ -2,25 +2,20 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(14,17,17);
 }
 
-#table{
-    background-color: white;
-    margin:5px;
-    padding:5px;
-    max-width:90vw;
+#app-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    font-size: 2rem;
 }
 
-td{
-    padding:5px;
-    margin:0;
-    text-align: center;
-}
+
 h2{
     text-align: center;
     color: white;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .timer{
@@ -30,29 +25,47 @@ h2{
     border-radius: 5px;
     font-size: 50px;
     color: white;
-    background-color: gray;
+    font-family: 'Inter', sans-serif;
+    padding-top: 30px;
+    padding-bottom: 20px;
 }
-
 
 .timer-btns{
-display: flex;
-justify-content: center;
-gap: 30px;  
-padding-top: 150px;
-padding-bottom: 20px;
+   display: flex;
+   padding-bottom: 20px;
 }
 
-#start-time, #stop-time{
+#start-time, #stop-time, #restart-time{
+    width: 100px;
+    color: white;
+    padding: 10px;
+    font-weight: 400;
+    border: none;
+    background-color: rgb(35,43,43);
+}
+
+
+#start-time:hover, #stop-time:hover, #restart-time:hover{
+   background-color: white;
+   color: black;
+   transition: 0.2s;
+}
+
+ #reset-btn{
     height: 50px;
-    width: 150px;
+    width: 200px;
     border-color: transparent;
+    color: white;
+    font-weight: 400;
 }
 
-#app-container{
-    display: grid;
-    grid-template-columns: 1fr;
-    font-size: 2rem;
+#reset-btn:hover{
+    background-color: white;
+    color: black;
+    transition: 0.2s;
 }
+
+
 
 .data-output{
 display: grid;
@@ -62,6 +75,8 @@ padding-bottom: 25px;
 .data-output label{
 color: white;
 text-align: center;
+font-family: 'Inter', sans-serif;
+padding: 10px;
 }
 
 .Generate-Btns{
@@ -71,17 +86,23 @@ padding-bottom: 50px;
 }
 
 
+
 button{
     width: 50%;
     margin: 0 auto;
     font-size: 1.5rem;
+    background-color: rgb(35,43,43);
+    border-radius: 5px;
 }
 
-input[type=text]{
+input[type=number]{
     text-align: center;
     padding: 5px;
     width: 150px;
     font-size: 2rem;
+    background-color: transparent;
+    border: none;
+    color: white;
 }
 
 #generate-small-data, #generate-large-data{
@@ -89,16 +110,41 @@ input[type=text]{
   height: 50px;
   width: 150px;
   border-color: transparent;
+  background-color: rgb(35,43,43);
+  border-radius: 5px;
+  color: white;
+  font-weight: 400;
 }
+
+#generate-small-data:hover, #generate-large-data:hover{
+    background-color: white;
+    color: black;
+    transition: 0.2s;
+}
+
 
 #deflection-input, #elevation-input{
     margin: 0 auto;
 }
 
-.app-buttons{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 20px;
-    background-color: rgb(81, 81, 81);
+.table-container{
+    width: 400px;
+    height: 300px;
+    overflow-y: auto;
 }
+
+table{
+    color: white;
+    font-size: 25px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: transparent;
+    border: 2px solid rgb(181, 181, 181);
+}
+
+.column-title{
+   font-family: 'Inter', sans-serif;
+    width: 120px;
+}
+

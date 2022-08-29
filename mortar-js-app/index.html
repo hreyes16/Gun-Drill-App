@@ -12,48 +12,52 @@
     <body>
         <div id="app-container">
 
-            <h2>Gun Drills</h2>
+            <h2>Mortar Drills</h2>
 
             <div class="watch"></div>
 
             <div class="data-output">
                 <label for="">Deflection</label>
                 <input type="number" readonly id="deflection-input" value="2800">
+
                 <label for="">Elevation</label>
-                <input type="number(" readonly id="elevation-input" value="800">
+                <input type="number" readonly id="elevation-input" value= "0800" onchange="leadingZeros()">
             </div>
 
             <div class="Generate-Btns">
-
                 <button id="generate-small-data">Small Deflection</button>
-
-
                 <button id="generate-large-data">Large Deflection</button>
             </div>
-
-
+            
             <button id="reset-btn">Reset Data</button>
-            <div class="timer-btns">
-                <button id="start-time">Start Time</button>
-                <button id="stop-time">Stop Time</button>
-            </div>
-            <div class="timer" id='timerData'>
+            
+            <div class="timer" class='timerData'>
                 00:00:00
             </div>
 
-            <div>
-                <table id='table'>
+            <div class="timer-btns">
+                <button id="start-time">Start Time</button>
+                <button id="stop-time">Stop Time</button>
+                <button id="restart-time">Reset Time</button>
+            </div>
+          
+
+            <div class="table-container">
+                <tbody>
+                <table id="table">
                     <tr>
-                        <td>Time</td>
-                        <td>Elevation</td>
-                        <td>Deflection</td>
+                        <td class="column-title">Time</td>
+                        <td class="column-title">Deflection</td>
+                        <td class="column-title">Elevation</td>
 
                     </tr>
                 </table>
             </div>
+        </tbody>
         </div>
 
         <script src="app.js"></script>
         <script src="timer.js"></script>
     </body>
 </html>
+

@@ -1,12 +1,14 @@
 const timer_element = document.querySelector('.timer');
 const startBtn = document.getElementById("start-time");
 const stopBtn = document.getElementById("stop-time");
+const restartBtn = document.getElementById('restart-time');
 
 let seconds = 0;
 let interval = null;
 
 startBtn.addEventListener('click', startTime);
 stopBtn.addEventListener('click', stopTime);
+restartBtn.addEventListener('click', resetTime);
 
     function timer(){
     seconds++;
@@ -29,6 +31,11 @@ function startTime(){
     interval = setInterval(timer, 1000);
 }
 
+function resetTime(){
+stopTime();
+seconds = 0;
+timer_element.innerText = '00:00:00';
+}
 function stopTime(){
     clearInterval(interval);
     interval = null;

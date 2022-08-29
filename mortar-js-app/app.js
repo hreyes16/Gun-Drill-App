@@ -4,23 +4,29 @@ let handleSmallDataBtn = document.getElementById('generate-small-data');
 let handleLargeDataBtn = document.getElementById('generate-large-data');
 let resetData = document.getElementById('reset-btn');
 let decrement = false;
+
+
+
+
 function checkDataLimits(size) {
 
-    if (defaultDeflection.value > 3200 && defaultElevation.value > 1100)
+
+    if (defaultDeflection.value > 3200 && defaultElevation.value > 1300)
         decrement = true;
 
     if (defaultDeflection.value < 2800 && defaultElevation.value < 800)
         decrement = false;
 
 
+
     if (!decrement) {
         switch (size) {
             case "large": {
-                defaultDeflection.value = (++defaultDeflection.value) + 400
-                defaultElevation.value = (++defaultElevation.value) + 400;
+                defaultDeflection.value = (++defaultDeflection.value) + (randomLargeDeflection());
+                defaultElevation.value = (++defaultElevation.value) + (randomLargeElevation());
             }
             case "small": {
-                defaultDeflection.value = (++defaultDeflection.value) + (randomSmallDef());
+                defaultDeflection.value = (++defaultDeflection.value) + (randomSmallDeflection());
                 defaultElevation.value = (++defaultElevation.value) + (randomSmallElevation());
             }
 
@@ -29,12 +35,12 @@ function checkDataLimits(size) {
     else if (decrement) {
         switch (size) {
             case "large": {
-                defaultDeflection.value = (++defaultDeflection.value) - 400
-                defaultElevation.value = (++defaultElevation.value) - 400;
+                defaultDeflection.value = (++defaultDeflection.value) - randomLargeDeflection();
+                defaultElevation.value = (++defaultElevation.value) - randomLargeElevation();
             }
             case "small": {
-                defaultDeflection.value = (--defaultDeflection.value) - (randomSmallDef());
-                defaultElevation.value = (--defaultElevation.value) - (randomSmallElevation());
+               defaultDeflection.value = (++defaultDeflection.value) - randomSmallDeflection();
+                defaultElevation.value = (++defaultElevation.value) - randomSmallElevation();
             }
 
         }
@@ -52,7 +58,7 @@ function populateTable() {
     //01
     let date = new Date();
 
-    const actualTime = `${date.getHours()}:${String(date.getMinutes()).padStart(2, 0)}:${String(date.getSeconds()).padStart(2, 0)}`
+    const actualTime = `${date.getHours()}:${String(date.getMinutes()).padStart(2, 0)}`
     const currDeflection = defaultDeflection.value;
     const currElevation = defaultElevation.value;
     console.log(actualTime, currDeflection, currElevation)
@@ -84,15 +90,27 @@ TODO
 */
 
 
-function randomSmallDef(min, max) {
-    min = Math.ceil(20);
-    max = Math.ceil(40)
+function randomSmallDeflection(min, max) {
+    min = Math.ceil(50);
+    max = Math.ceil(75)
     return parseInt(Math.random() * (max - min) + min);
 }
 
 function randomSmallElevation(min, max) {
     min = Math.ceil(35);
-    max = Math.ceil(40);
+    max = Math.ceil(90);
+    return parseInt(Math.random() * (max - min) + min);
+}
+
+function randomLargeDeflection(min, max){
+    min = Math.ceil(100);
+    max = Math.ceil(200);
+    return parseInt(Math.random() * (max - min) + min);
+}
+
+function randomLargeElevation(min, max){
+    min = Math.ceil(100);
+    max = Math.ceil(200);
     return parseInt(Math.random() * (max - min) + min);
 }
 
